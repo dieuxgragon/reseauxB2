@@ -4,26 +4,12 @@ host ='10.1.1.10'
 port = 13337
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind((host, port))
+s.connect((host, port))
 
-s.listen(1)
+s.sendall(b'Meooooo !')
 
-conn, addr = s.accept()
-print('Connected by', addr)
+data = s.recv(1024)
 
-while True:
+s.close()
 
-    try:
-        data = conn.recv(1024)
-        if not data: break
-        print(f"Données reçues du client : {data}")
-
-        message = "Meooooo "
-        conn.sendall(message.encode())
-     
-    except socket.error:
-        print("Error Occured.")
-        break
-
-    conn.close()
-
+print(f"Le serveur a répondu {repr(data)}")
