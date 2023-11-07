@@ -4,7 +4,6 @@ host ='10.1.1.10'
 port = 13337
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
 s.bind((host, port))
 
 s.listen(1)
