@@ -3,6 +3,8 @@ import socket
 import sys
 import logging
 
+logging.basicConfig(filename='logs.log', encoding='utf-8', level=logging.DEBUG)
+
 def check_port(value):
     try:
         port = int(value)
@@ -31,12 +33,9 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind(('10.1.1.10', args.port))
 server_socket.listen(1)
 
-print(f"Serveur en attente de connexions sur l'adresse IP 10.1.1.10 et le port {args.port}")
+logging.info(f"Serveur en attente de connexions sur l'adresse IP 10.1.1.10 et le port {args.port}")
 
 while True:
     client_socket, client_address = server_socket.accept()
     print(f"Connexion établie avec {client_address}")
     client_socket.close()
-
-    logging.basicConfig(filename='logs.log', encoding='utf-8', level=logging.DEBUG)
-    logging.debug('This message should go to the log file')
