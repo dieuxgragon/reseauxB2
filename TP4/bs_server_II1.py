@@ -5,7 +5,8 @@ import logging
 
 
 def logger():
-    logging.basicConfig(filename='logs.log', encoding='utf-8', level=logging.DEBUG)
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',filename='logs.log', encoding='utf-8', level=logging.DEBUG)
+    logging.debug('This message should go to the log file')
 
 def check_port(value):
     try:
