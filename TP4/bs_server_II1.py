@@ -33,10 +33,10 @@ parser.add_argument(
 args = parser.parse_args()
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_socket.bind(('10.1.2.10', args.port))
+server_socket.bind(('10.1.1.10', args.port))
 server_socket.listen(1)
 
-print(f"Serveur en attente de connexions sur l'adresse IP 10.1.2.10 et le port {args.port}")
+print(f"Serveur en attente de connexions sur l'adresse IP 10.1.1.10 et le port {args.port}")
 
 while True:
     client_socket, client_address = server_socket.accept()
