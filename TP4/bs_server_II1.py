@@ -1,6 +1,11 @@
 import argparse
 import socket
 import sys
+import logging
+
+
+def logger():
+    logging.basicConfig(filename='logs.log', encoding='utf-8', level=logging.DEBUG)
 
 def check_port(value):
     try:
