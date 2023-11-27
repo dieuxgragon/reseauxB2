@@ -28,6 +28,9 @@ TIME-WAIT 0      0          10.1.1.10:13337     10.1.1.1:55832
 
 ## 1. Args
 ### [ bs_serveur_2.py](./bs_client_II1.py)
+```ruby
+note : je n ai pas tres bien compris le comment reporter les info des client si un cours serais possible se serais avec joix voici tout ce que j ai reussi a faire desoler
 
+```
 
 
