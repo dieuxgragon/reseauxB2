@@ -23,3 +23,9 @@ Error Occured.
 [enzo@bsserverI1 TP4]$ ss -plant |grep 13337
 TIME-WAIT 0      0          10.1.1.10:13337     10.1.1.1:55832
 ``` 
+
+# II. You say dev I say good practices
+
+## 1. Args
+
+
