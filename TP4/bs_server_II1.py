@@ -3,11 +3,6 @@ import socket
 import sys
 import logging
 
-
-def logger():
-    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',filename='logs.log', encoding='utf-8', level=logging.DEBUG)
-    logging.debug('This message should go to the log file')
-
 def check_port(value):
     try:
         port = int(value)
@@ -42,3 +37,6 @@ while True:
     client_socket, client_address = server_socket.accept()
     print(f"Connexion établie avec {client_address}")
     client_socket.close()
+
+    logging.basicConfig(filename='logs.log', encoding='utf-8', level=logging.DEBUG)
+    logging.debug('This message should go to the log file')
