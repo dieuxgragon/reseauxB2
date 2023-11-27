@@ -23,8 +23,6 @@ parser.add_argument(
     default=13337,
     help="Spécifier un numéro de port (par défaut : 13337)"
 )
-parser.add_argument('-h', '--help', action='help', help="Affiche l'aide")
-
 args = parser.parse_args()
 
 print(f"Port spécifié : {args.port}")
