@@ -3,7 +3,7 @@ import socket
 import sys
 import logging
 
-logging.basicConfig( format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',filename='logs.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig( format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',level=logging.DEBUG,filename='logs.log', encoding='utf-8')
 
 console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.INFO)  
