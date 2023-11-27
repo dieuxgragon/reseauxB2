@@ -3,7 +3,7 @@ import socket
 import sys
 import logging
 
-logging.basicConfig( format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',level=logging.DEBUG,filename='logs.log', encoding='utf-8')
+logging.basicConfig( format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',level=logging.DEBUG,filename='/var/log/bs_server/bs_server.log', encoding='utf-8')
 
 console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.INFO)  
@@ -13,6 +13,8 @@ console_handler.setFormatter(console_formatter)
 logging.getLogger().addHandler(console_handler)
 
 def check_port(value):
+    logging.info(f"Le serveur tourne sur 10.1.1.10:{args.port}")
+    
     try:
         port = int(value)
         if port < 0 or port > 65535:
