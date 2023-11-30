@@ -18,6 +18,6 @@ msg_len = len(msg)
 payload = str(msg_len) + msg
 
 # Réception et affichage du résultat
-s_data = s.recv(1024)
+s_data = s.recv(1)
 print(s_data.decode())
 s.close()
