@@ -1,15 +1,11 @@
 import socket
 
-def check_nbr():
-    try:
-        msg = input()
-        # Vérification si le nombre est inférieur ou égal à 4294967295
-        if int(msg) > 4294967295:
-            print("Nombre trop grand. Veuillez entrer un nombre inférieur ou égal à 4294967295.")
-        else:
-            return input
-    except ValueError:
-        print("Veuillez entrer un nombre valide.")
+def checknumber(value):
+    nb = int(value)
+    if nb > 4294967295 :
+        print ("ERROR: number too high")
+    else:
+        return input
     
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(('10.1.1.10', 13337))
