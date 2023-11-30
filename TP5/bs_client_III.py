@@ -1,7 +1,7 @@
 import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(('127.0.0.1', 9999))
+s.connect(('10.1.1.10', 13337))
 s.send('Hello'.encode())
 
 # On reçoit la string Hello
@@ -17,4 +17,3 @@ s.send(msg.encode())
 s_data = s.recv(1024)
 print(s_data.decode())
 s.close()
-    
