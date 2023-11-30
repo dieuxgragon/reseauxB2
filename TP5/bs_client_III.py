@@ -1,13 +1,13 @@
 import socket
 
-while True:
+def check_nbr():
     try:
         msg = input()
         # Vérification si le nombre est inférieur ou égal à 4294967295
         if int(msg) > 4294967295:
             print("Nombre trop grand. Veuillez entrer un nombre inférieur ou égal à 4294967295.")
         else:
-            break
+            return input
     except ValueError:
         print("Veuillez entrer un nombre valide.")
     
