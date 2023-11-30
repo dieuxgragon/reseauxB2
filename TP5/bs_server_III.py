@@ -18,7 +18,9 @@ while True:
         conn.send("Hello".encode())
 
         # On reçoit le calcul du client
-        data = conn.recv(4)
+        msg_len = conn.recv(1)
+
+        msg = conn.recv(msg_len)
 
         # Evaluation et envoi du résultat
         res  = eval(data.decode())

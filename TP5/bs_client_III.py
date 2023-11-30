@@ -13,6 +13,10 @@ msg = input("Calcul à envoyer: ")
 # On envoie
 s.send(msg.encode())
 
+msg_len = len(msg)
+
+payload = msg_len + msg
+
 # Réception et affichage du résultat
 s_data = s.recv(1024)
 print(s_data.decode())
