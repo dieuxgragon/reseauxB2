@@ -15,7 +15,7 @@ s.send(msg.encode())
 
 msg_len = len(msg)
 
-payload = msg_len + int(msg)
+payload = int (msg_len + msg)
 
 # Réception et affichage du résultat
 s_data = s.recv (payload)
