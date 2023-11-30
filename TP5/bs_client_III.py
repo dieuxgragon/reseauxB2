@@ -15,7 +15,7 @@ print(s_data.decode())
 s.close()
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.connect(('10.1.2.10', 9999))
+sock.connect(('10.1.1.10', 9999))
 
 msg = input('Enter a message: ')
 
