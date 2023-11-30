@@ -1,5 +1,11 @@
 import socket
 
+def checknumber():
+    if input > 4294967295 :
+        print ("ERROR: number too high")
+    else:
+        return input
+    
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(('10.1.1.10', 13337))
 s.send('Hello'.encode())
