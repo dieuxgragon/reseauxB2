@@ -10,14 +10,12 @@ data = s.recv(1024)
 # Récupération d'une string utilisateur
 msg = input("Calcul à envoyer: ")
 
-# On envoie
-s.send(msg.encode())
-
 msg_len = len(msg)
 
-payload = str(msg_len + msg)
+payload = msg_len + msg
 
+s.send(payload.encode())
 # Réception et affichage du résultat
-s_data = s.recv (payload)
+s_data = s.recv (4)
 print(s_data.decode())
 s.close()
