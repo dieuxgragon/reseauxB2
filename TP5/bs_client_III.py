@@ -9,14 +9,14 @@ s.send('Hello'.encode())
 data = s.recv(1024)
 
 while True:
+    msg = input("Calcul :")
     try:
-        msg = input("Calcul : ")
         # Vérification si le nombre est inférieur ou égal à 4294967295
-        if int(msg) > 4294967295:
-            print("Nombre trop grand. Veuillez entrer un nombre inférieur ou égal à 4294967295.")
-            sys.exit(1)
-        else:
+        num = int(msg)
+        if 0 <= num <= 4294967295:
             break
+        else:
+            print("Nombre hors de la plage autorisée. Veuillez entrer un nombre entre 0 et 4294967295.")
     except ValueError:
         print("Veuillez entrer un nombre valide.")
         
