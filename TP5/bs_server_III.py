@@ -18,7 +18,7 @@ while True:
         conn.send("Hello".encode())
 
         # On reçoit le calcul du client
-        data = conn.recv(1024)
+        data = conn.recv(4)
 
         # Evaluation et envoi du résultat
         res  = eval(data.decode())
