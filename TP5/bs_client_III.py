@@ -1,4 +1,5 @@
 import socket
+import sys
     
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(('10.1.1.10', 13337))
@@ -9,10 +10,11 @@ data = s.recv(1024)
 
 while True:
     try:
-        msg = input("Calcul à envoyer (max 4294967295): ")
+        msg = input("Calcul : ")
         # Vérification si le nombre est inférieur ou égal à 4294967295
         if int(msg) > 4294967295:
             print("Nombre trop grand. Veuillez entrer un nombre inférieur ou égal à 4294967295.")
+            sys.exit(1)
         else:
             break
     except ValueError:
