@@ -1,7 +1,8 @@
 import socket
 
 def checknumber():
-    if input > 4294967295 :
+    nb = int(input)
+    if nb >= 4294967295 :
         print ("ERROR: number too high")
     else:
         return input
