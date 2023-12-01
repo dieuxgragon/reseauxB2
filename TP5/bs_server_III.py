@@ -12,20 +12,18 @@ while True:
     try:
         # On reçoit le calcul du client
         msg_len = conn.recv(1)
+        print(f"taille du message {msg_len}")
 
         if not msg_len:
             break
 
-        print(msg_len)
-
         intmsg = int.from_bytes(msg_len, byteorder='little')   
         msg = conn.recv(intmsg)
-
-        print(msg)
-        print(type(msg))
+        print(f"le message = {msg}")
 
         # Evaluation et envoi du résultat
         res = eval(msg.decode())
+        print (res)
         conn.send(str(res).encode())
          
     except socket.error:
