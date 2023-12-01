@@ -6,19 +6,13 @@ s.connect(('10.1.1.10', 13337))
 # Récupération d'une string utilisateur
 msg = input("Calcul à envoyer: ")
 
-while True:
+addition_count = msg.count('+')
 
-    try:
-        msg_len = len(msg)
-
-        if msg_len > 3:
-           print("calcule trop long essaye a + b")
-        break
-    except socket.error:
-        print("Error Occured.")
-        break
-
-payload = str(msg_len) + msg 
+if addition_count > 1:
+    print("Erreur : Maximum de deux additions autorisées.")
+else:
+    msg_len = len(msg)
+    payload = str(msg_len) + msg 
 
 
 s.send(payload.encode())
