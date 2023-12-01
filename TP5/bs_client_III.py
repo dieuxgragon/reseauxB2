@@ -6,7 +6,7 @@ s.connect(('10.1.1.10', 13337))
 # Récupération d'une string utilisateur
 msg = input("Calcul à envoyer: ")
 
-msg_len = len(msg)
+msg_len = len(msg + b'clafin')
 
 payload = str(msg_len) + msg + b'clafin'
 
