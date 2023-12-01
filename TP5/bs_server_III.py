@@ -12,12 +12,6 @@ while True:
     try:
         # On reçoit le calcul du client
         msg_len = conn.recv(1)
-        
-        if msg_len:
-            intmsg = int.from_bytes(msg_len, byteorder='big')  
-            msg = conn.recv(intmsg)
-        else:
-            print("Aucune donnée reçue ou longueur incorrecte.")
 
         intmsg = int(msg_len)   
         msg = conn.recv(intmsg)
