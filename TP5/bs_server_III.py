@@ -15,7 +15,7 @@ while True:
 
         print(msg_len)
 
-        intmsg = int.from_bytes(msg_len)   
+        intmsg = int.from_bytes(msg_len, byteorder='little')   
         msg = conn.recv(intmsg)
 
         # Evaluation et envoi du résultat
