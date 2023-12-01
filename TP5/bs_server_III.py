@@ -16,7 +16,7 @@ while True:
 
         if not msg_len:
             break
-        intmsg = int.from_bytes(msg_len)   
+        intmsg = int.from_bytes(msg_len, 'little')   
         msg = conn.recv(intmsg)
         print(f"le message = {msg}")
 
