@@ -2,7 +2,7 @@ import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-s.bind(('10.1.1.10', 13337))  
+s.bind(('127.0.0.1', 9999))  
 
 s.listen(1)
 conn, addr = s.accept()
@@ -10,6 +10,13 @@ conn, addr = s.accept()
 while True:
 
     try:
+        # On reçoit la string Hello du client
+        data = conn.recv(1024)
+        if not data: break
+        print(f"Données reçues du client : {data}")
+
+        conn.send("Hello".encode())
+
         # On reçoit le calcul du client
         msg_len = conn.recv(1)
 
