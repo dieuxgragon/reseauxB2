@@ -7,6 +7,9 @@ s.connect(('10.1.1.10', 13337))
 msg = input("Calcul à envoyer: ")
 
 msg_len = len(msg)
+if msg_len > 3:
+    print("calcule trop long essaye a + b")
+    SystemExit
 
 payload = str(msg_len) + msg 
 
