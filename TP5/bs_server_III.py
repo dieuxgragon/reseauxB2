@@ -14,7 +14,7 @@ while True:
         msg_len = conn.recv(1)
 
         intmsg = int(msg_len)   
-        msg = conn.recv(b'intmsg')
+        msg = conn.recv(intmsg)
 
         # Evaluation et envoi du résultat
         res  = eval(msg.decode())
