@@ -13,6 +13,9 @@ while True:
         # On reçoit le calcul du client
         msg_len = conn.recv(1)
 
+        if not msg_len:
+            break
+
         print(msg_len)
 
         intmsg = int.from_bytes(msg_len, byteorder='little')   
@@ -22,7 +25,7 @@ while True:
         print(type(msg))
 
         # Evaluation et envoi du résultat
-        res  = eval(msg.decode())
+        res = eval(msg.decode())
         conn.send(str(res).encode())
          
     except socket.error:
