@@ -2,9 +2,7 @@ import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(('10.1.1.10', 13337))
-s.send('Hello'.encode())
 
-# On reçoit la string Hello
 # Récupération d'une string utilisateur
 msg = input("Calcul à envoyer: ")
 
