@@ -5,14 +5,8 @@ s.connect(('10.1.1.10', 13337))
 
 # Récupération d'une string utilisateur
 msg = input("Calcul à envoyer: ")
-
-addition_count = msg.count('+')
-
-if addition_count > 1:
-    print("Erreur : Maximum de deux additions autorisées.")
-else:
-    msg_len = len(msg)
-    payload = str(msg_len) + msg 
+msg_len = len(msg)
+payload = str(msg_len) + msg 
 
 
 s.send(payload.encode())
