@@ -13,8 +13,7 @@ while True:
         # On reçoit le calcul du client
         msg_len = conn.recv(1)
 
-        intmsg = int(msg_len)
-        msg = conn.recv(intmsg)
+        msg = conn.recv(msg_len)
 
         # Evaluation et envoi du résultat
         res  = eval(msg.decode())
