@@ -10,20 +10,13 @@ conn, addr = s.accept()
 while True:
 
     try:
-        # On reçoit la string Hello du client
-        data = conn.recv(1024)
-        if not data: break
-        print(f"Données reçues du client : {data}")
-
-        conn.send("Hello".encode())
-
         # On reçoit le calcul du client
         msg_len = conn.recv(1)
 
         msg = conn.recv(msg_len)
 
         # Evaluation et envoi du résultat
-        res  = eval(data.decode())
+        res  = eval(msg.decode())
         conn.send(str(res).encode())
          
     except socket.error:
