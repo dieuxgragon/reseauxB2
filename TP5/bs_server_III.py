@@ -11,7 +11,7 @@ while True:
 
     try:
         # On reçoit le calcul du client
-        msg_len = conn.recv(1024)
+        msg_len = conn.recv(1)
 
         print(msg_len)
 
