@@ -23,7 +23,6 @@ while True:
 
         # Evaluation et envoi du résultat
         res = eval(msg.decode())
-        print (res)
         conn.send(str(res).encode())
          
     except socket.error:
