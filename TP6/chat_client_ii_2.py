@@ -1,6 +1,6 @@
 import socket
 import aioconsole
-
+import asyncio
 
 async def async_input(writer):
     while True:
