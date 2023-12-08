@@ -4,11 +4,6 @@ import asyncio
 
 async def async_input(writer):
     while True:
-        msg = 'hello'.encode()
-        writer.write(msg)
-        await writer.drain()
-
-
         msg_client = await aioconsole.ainput()
         writer.write(msg_client.encode())
         await writer.drain()
