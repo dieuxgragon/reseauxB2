@@ -13,7 +13,7 @@ async def handle_client_msg(reader, writer):
         await writer.drain()
 
         message = data.decode()
-        print(f"Received {message!r} from {addr!r}")
+        print(f"Message Received From {addr[0]} : {addr[1]} : {message}")
 
 async def main():
 
