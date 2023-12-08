@@ -17,7 +17,7 @@ async def handle_client_msg(reader, writer):
 
 async def main():
 
-    server = await asyncio.start_server(handle_client_msg, '10.1.1.10', 8888)
+    server = await asyncio.start_server(handle_client_msg, '10.1.1.10', 13337)
 
     addrs = ', '.join(str(sock.getsockname()) for sock in server.sockets)
     print(f'Serving on {addrs}')
