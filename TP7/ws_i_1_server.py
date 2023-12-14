@@ -9,6 +9,13 @@ async def hello(websocket):
     print(f">>> {greeting}")
 
 
+    while True:
+        msg = await websocket.recv()
+        print(f"<<< {msg}")
+        rsp = f"MSG received {name}!"
+        await websocket.send(rsp)
+        print(f"{rsp}")
+
 async def main():
     async with websockets.serve(hello, "10.1.2.10", 13337):
         await asyncio.Future()  # run forever
