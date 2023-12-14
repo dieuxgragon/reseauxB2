@@ -14,13 +14,7 @@ async def handle_client_msg(reader, writer):
             clients[addr]["r"] = reader
             clients[addr]["w"] = writer
 
-                
-
-
-
-                
-
-
+            
         writer.write(f"Hello {addr[0]} : {addr[1]}".encode())
         await writer.drain()
 
