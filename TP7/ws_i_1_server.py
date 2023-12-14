@@ -6,15 +6,7 @@ async def hello(websocket):
     print(f"<<< {name}")
     greeting = f"Hello {name}!"
     await websocket.send(greeting)
-    print(f">>> {greeting}")
-
-
-    while True:
-        msg = await websocket.recv()
-        print(f"<<< {msg}")
-        rsp = f"MSG received {name}!"
-        await websocket.send(rsp)
-        print(f"{rsp}")
+    print(f">>> Hello client ! Received : {greeting}")
 
 async def main():
     async with websockets.serve(hello, "10.1.2.10", 13337):
