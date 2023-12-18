@@ -1,20 +1,40 @@
-const url = "ws://10.1.1.10:13337"
+const url = "ws://10.1.2.10:13337"
 
-async function handle_client(){
-const webSocket = new WebSocket(url);
+async function handle_client() {
+    const socket = new WebSocket(url);
 
-exampleSocket.send("Here's some text that the server is urgently awaiting!");
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Entrez un message";
+    document.body.appendChild(input); 
+    
+    const messageDisplay = document.createElement("div");
+    document.body.appendChild(messageDisplay);  
 
-exampleSocket.onopen = () => {
-    exampleSocket.send("Hello im open");
-  };
+    input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            const message = input.value;
+            socket.send(message);
+            input.value = ""; 
+            document.body.removeChild(input);
+        }
+    });
 
-exampleSocket.onmessage = (event) => {
-console.log(event.data);
-};
+    socket.onopen = () => {
+        console.log("Connexion WebSocket ouverte");
+    };
 
-exampleSocket.onclose = () => {
-    exampleSocket.send("closed");
-  };
+    socket.onmessage = (event) => {
+        const message = event.data
 
+        const messageElement = document.createElement("p");
+        messageElement.textContent = message;
+        messageDisplay.appendChild(messageElement);
+    };
+
+    socket.onclose = () => {
+        console.log("Connexion WebSocket fermée");
+    };
 }
+
+handle_client();
